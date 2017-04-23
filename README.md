@@ -17,4 +17,8 @@ star if you like :)<br>
 
 # Screenshot
 ![Image text](https://raw.githubusercontent.com/22Nathan/GraphCalculator-Swift-IOS10/master/Image/Screen%20Shot%202017-04-23%20at%2012.28.34%20PM.png)
+![Image text](https://raw.githubusercontent.com/22Nathan/GraphCalculator-Swift-IOS10/master/Image/Screen%20Shot%202017-04-23%20at%201.14.18%20PM.png)
+![Image text](https://raw.githubusercontent.com/22Nathan/GraphCalculator-Swift-IOS10/master/Image/2017-04-23%2013_09_26.gif)
+![Image text](https://raw.githubusercontent.com/22Nathan/GraphCalculator-Swift-IOS10/master/Image/2017-04-23%2013_16_34.gif)
+![Image text](https://raw.githubusercontent.com/22Nathan/GraphCalculator-Swift-IOS10/master/Image/2017-04-23%2013_19_10.gif)
 

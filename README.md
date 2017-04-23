@@ -1,4 +1,4 @@
-# Calculator-IOS10
+# GraphCalculator-Swift-IOS10
 Implementation Programming Project in Developing Apps for IOS CS193P<br>
 I just started learning this course,and this is my programming project for one to three.Unfortunately,I did not found useful repositories in github about the project.So I hope my repositories will help.<br>
 Although I implement most of the functions as asked to,I think there's a lot to be improved. Welcome to pull requests :)<br>

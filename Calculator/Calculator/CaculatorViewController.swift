@@ -8,7 +8,41 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class CaculatorViewController: UIViewController,UISplitViewControllerDelegate{
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.splitViewController?.delegate = self
+    }
+    
+    func splitViewController(_ splitViewController: UISplitViewController,
+                             collapseSecondary secondaryViewController: UIViewController,
+                             onto primaryViewController: UIViewController
+        )-> Bool {
+        return true
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        var destinationViewController = segue.destination
+        if let navigationController = destinationViewController as? UINavigationController{
+            destinationViewController = navigationController.visibleViewController ?? destinationViewController
+        }
+        if let graphViewController = destinationViewController as? GraphViewController{
+            var math : String = brain.description
+            if math.characters.count > 3{
+            let range = math.index(math.startIndex,offsetBy: 3)..<math.endIndex
+            
+                math.removeSubrange(range)
+                if (math == "sin") || (math == "cos") || (math == "tan")
+                {
+                    var formulaVal = MathFormula(symbol: math )
+                    graphViewController.formula = formulaVal
+                    graphViewController.navigationItem.title = brain.description
+                }
+            }
+        }
+    }
+
     private var brain = CalculatorBrain()
     @IBOutlet weak var Status: UILabel!
     @IBOutlet private weak var Display: UILabel!
@@ -129,3 +163,5 @@ class ViewController: UIViewController {
     }
     
 }
+
+

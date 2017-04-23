@@ -54,7 +54,9 @@ class CalculatorBrain{ //model
         "e" : Operation.Constant(M_E),
         "±" : Operation.UnaryOperation({-$0}),
         "√" : Operation.UnaryOperation(sqrt),
+        "sin" : Operation.UnaryOperation(sin),
         "cos" : Operation.UnaryOperation(cos),
+        "tan" : Operation.UnaryOperation(tan),
         "✕" : Operation.BinaryOperation({$0 * $1}), //closures
         "÷" : Operation.BinaryOperation({$0 / $1}),
         "+" : Operation.BinaryOperation({$0 + $1}),
@@ -72,6 +74,7 @@ class CalculatorBrain{ //model
     func performOperation(symbol: String){
         internalProgram.append(symbol as AnyObject)
         delProgram.append(symbol as AnyObject)
+        
         if let operation = operations[symbol]{
             switch operation{ //Swift can inferOperation
             case .Constant(let value):
@@ -80,12 +83,17 @@ class CalculatorBrain{ //model
                 
             case .UnaryOperation(let function):
                 accumulator = function(accumulator)
-                if isPartialResult{
-                    let index = description.index(description.endIndex, offsetBy: -3)
-                    description.insert("√", at: index)// at last operand /*To Be improved here */
-                }
-                else{
-                    description = "√(" + description + ")"
+                description = symbol + description
+                
+                if symbol == "√"
+                {
+                    if isPartialResult{
+                        let index = description.index(description.endIndex, offsetBy: -3)
+                        description.insert("√", at: index)// at last operand /*To Be improved here */
+                    }
+                    else{
+                        description = "√(" + description + ")"
+                    }
                 }
                 
             case .BinaryOperation(let function):

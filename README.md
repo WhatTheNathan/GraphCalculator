@@ -16,4 +16,5 @@ star if you like :)<br>
 * I have implement a generic point depiction method in the GraphView.However,the difficult point for me now is how to pass the argument (e.g. y = 6x)
 
 # Screenshot
+![](GraphCalculator-Swift-IOS10/Image/Screen Shot 2017-04-23 at 12.28.34 PM.png)
 
